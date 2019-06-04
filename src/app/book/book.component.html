@@ -1,0 +1,179 @@
+
+
+
+
+
+
+
+<div class="wrapper">
+<div class="container">
+
+    
+              
+    
+    <div class="form">
+    <div> <h2>BOOKING</h2></div> 
+    <div class="booking-form-box">
+        <div class="radio-btn">
+      <input type="radio" class="btn" name="check" checked="checked">
+      <span>Standard</span>
+      <input type="radio" class="btn" name="check" ><span>Superior</span>
+      <input type="radio" class="btn" name="check"><span>Vip</span>
+      </div>
+    
+    
+      <div class="booking-form">
+    <label>From</label>
+    <input type="text" [(ngModel)]="model.from" class="form-control" name="From" placeholder="City" >
+  
+    
+    <div class="input-grp">
+        <label>Checking-In</label>
+        <input type="date" [(ngModel)]="CheckingIn" class="form-control select-date" name="checkingIn">
+    </div>
+    
+
+    <div class="input-grp">
+        <label>Checking-Out</label>
+        <input type="date" [(ngModel)]="model.checkingOut"  class="form-control select-date" name="checkingOut">
+    </div>
+    
+
+    <div class="input-grp">
+        <label>Adults</label>
+        <input type="number" class="form-control" name="adults" [(ngModel)]="model.adults" value="1">
+    </div>
+    
+
+    <div class="input-grp">
+        <label>Children</label>
+        <input type="number" name="Children" [(ngModel)]="model.children" class="form-control" value="0">
+    </div>
+    
+
+
+    <h3 class="panel-title display-td" >Payment Details</h3>
+    <div class="display-td" >                            
+        <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+    </div>
+
+
+    <div class="form-group">
+            <label for="cardNumber">CARD NUMBER</label>
+            <div class="input-group">
+                <input 
+                    type="tel"
+                    class="form-control" name="card number" 
+                    name="cardNumber"
+                    placeholder="Valid Card Number"
+                    autocomplete="cc-number"
+                    [(ngModel)]="model.cardNumber"
+                    required autofocus 
+                />
+                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+            </div>
+        </div> 
+        
+        <div class="row">
+                <div class="col-xs-7 col-md-7">
+                    <div class="form-group">
+                        <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                        <input 
+                            type="tel" 
+                            class="form-control" name="expiration"
+                            name="cardExpiry"
+                            placeholder="MM / YY"
+                            autocomplete="cc-exp"
+                            [(ngModel)]="model.cardExpiry"
+                            required 
+                        />
+                    </div>
+                </div>
+                <div class="col-xs-5 col-md-5 pull-right">
+                    <div class="form-group">
+                        <label for="cardCVC">CVC CODE</label>
+                        <input 
+                            type="tel" 
+                            class="form-control"
+                            name="cardCVC"
+                            placeholder="CVC"
+                            autocomplete="off"
+                            [(ngModel)]="model.cardCVC"
+                            required
+                        />
+                    </div>
+                </div>
+               
+            </div>
+
+           
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="input-grp">
+            <label>Booking class</label>
+            <select class="custom-select" name="Class" [(ngModel)]="model.class">
+        <option value="Standard Class">Standard class</option>
+        <option value="Superior Class">Superior class</option>
+        <option value="VIP Class">VIP class</option>
+            </select>
+        </div>
+
+        <div class="input-grp">
+                <button type="submit" (click)="payNow()" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-primary flight #000">Pay Now</button>
+        </div>
+        
+        
+        </div>
+        </div>
+        </div>
+        
+        
+    </div>
+    </div>
+
+
+
+<div class="modal" id="exampleModalLong" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Success!!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                   From: {{model.from}} <br>
+                   Checking In: {{model.checkingIn}} <br>
+                   Checking Out: {{model.checkingOut}} <br>
+                   Adults: {{model.adults}} <br>
+                   Children: {{model.children}} <br>
+                  Booking Class: {{model.class}} <br>
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"><a href="contact">Contact Us</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
